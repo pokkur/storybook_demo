@@ -1,0 +1,39 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from "@storybook/addon-actions";
+import BlockButton from '@/components/BlockButton.vue';
+
+<Meta title="MDX|BlockButton" component={BlockButton} />
+
+# Button
+
+汎用BlockButtonコンポーネント。  
+このコンポーネントの`Props` 確認できる
+
+## Rounded
+
+<Props of={BlockButton} />
+
+Shape="rounded"なボタンですよ。  
+
+<Preview>
+  <Story name="Normal">
+    {{
+        components: { BlockButton },
+        template: '<block-button shape="rounded" @click="action">Hello Button</block-button>',
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Preview>
+
+## Squared
+
+shapeを指定しないとカクばる。  
+
+<Preview>
+  <Story name="Squared">
+    {{
+        components: { BlockButton },
+        template: '<block-button>Squared</block-button>'
+    }}
+  </Story>
+</Preview>
